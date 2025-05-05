@@ -1,0 +1,13 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# Test cache
+.pytest_cache/
+
+# Environment variables
+.env
