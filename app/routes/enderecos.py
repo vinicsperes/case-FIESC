@@ -15,9 +15,29 @@ def get_db():
     finally:
         db.close()
 
+def verificar_endereco_duplicado(db: Session, endereco_data: dict):
+    endereco = db.query(models.Endereco).filter(
+        models.Endereco.cep == endereco_data['cep'],
+        models.Endereco.logradouro == endereco_data['logradouro'],
+        models.Endereco.complemento == endereco_data['complemento'],
+        models.Endereco.bairro == endereco_data['bairro'],
+        models.Endereco.cidade == endereco_data['cidade'],
+        models.Endereco.estado == endereco_data['estado'],
+        models.Endereco.estadoSigla == endereco_data['estadoSigla'],
+        models.Endereco.pais == endereco_data['pais'],
+        models.Endereco.paisSigla == endereco_data['paisSigla']
+    ).first()
+
+    if endereco:
+        raise HTTPException(status_code=400, detail="Endereço já cadastrado.")
+    return None
+
+
 @router.post("/", response_model=schemas.Endereco)
 def criar_endereco(endereco: schemas.EnderecoCreate, db: Session = Depends(get_db)):
-    db_endereco = models.Endereco(**endereco.model_dump())
+    verificar_endereco_duplicado(db, endereco.dict())
+
+    db_endereco = models.Endereco(**endereco.dict())
     db.add(db_endereco)
     db.commit()
     db.refresh(db_endereco)
