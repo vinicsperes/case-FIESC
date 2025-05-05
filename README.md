@@ -38,8 +38,8 @@ A API permite **criar, listar, buscar, atualizar e deletar** endereços, com os 
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/caseFIESC.git
-cd caseFIESC
+git clone https://github.com/vinicsperes/caseFIESC.git
+cd case-FIESC
 ```
 
 2. Crie e ative o ambiente virtual
@@ -67,27 +67,9 @@ uvicorn app.main:app --reload
 ```
 Acesse: http://localhost:8000/docs para visualizar a documentação interativa via Swagger.
 
-🧪 Rodando os testes
+## 🧪 Rodando os testes
 ```bash
 pytest
-```
-
-📁 Estrutura do Projeto
-```pgsql
-caseFIESC/
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── database.py
-│   └── routers/
-│       └── enderecos.py
-├── tests/
-│   └── test_schemas.py
-├── .env
-├── requirements.txt
-└── README.md
 ```
 
 ## 👨‍💻 Autor
