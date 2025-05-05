@@ -92,7 +92,7 @@ Acesse: http://localhost:8000/docs para visualizar a documentação interativa v
 
 ## 🧪 Rodando os testes
 ```bash
-pytest
+PYTHONPATH=. pytest
 ```
 
 ## 👨‍💻 Autor
