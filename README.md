@@ -38,7 +38,7 @@ A API permite **criar, listar, buscar, atualizar e deletar** endereços, com os 
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/vinicsperes/caseFIESC.git
+git clone https://github.com/vinicsperes/case-FIESC.git
 cd case-FIESC
 ```
 
